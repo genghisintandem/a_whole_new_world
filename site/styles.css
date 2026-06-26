@@ -581,16 +581,17 @@ html {
 }
 
 .antipattern h3 {
-    color: var(--color-error);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-ink);
     margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
 }
 
 .antipattern h3::before {
-    content: '⚠️';
-    font-size: 1.5em;
+    display: none;
 }
 
 .antipattern h4 {
