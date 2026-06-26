@@ -190,7 +190,7 @@ Patrick's approach demonstrates the new paradigm:
 
 1. **Speed to prove the concept** — Patrick went from user feedback to working code in 5 days, not 3 weeks. He shipped something real quickly enough to learn from it, even when he needed to wait an extra day for a small fix to go out.
 
-2. **Ship dark, iterate in main** — Patrick didn't wait for perfection. He got the code into `main` behind a feature flag, where it can evolve safely without blocking other work.
+2. **Ship dark, iterate in Trunk** — Patrick didn't wait for perfection. He got the code into trunk behind a feature flag, where it can evolve safely without blocking other work.
 
 3. **Full-stack ownership** — Patrick didn't hand off the backend work. He learned enough Java to draft the changes, then paired with Priya to make it production-ready. He owned the feature end-to-end.
 
@@ -205,7 +205,7 @@ Patrick's approach demonstrates the new paradigm:
 **Timeline Summary:**
 - Day 1: Spotted opportunity, got PM buy-in, built React component with AI, shipped screenshot
 - Day 2: Drafted backend changes with AI, paired with Priya, opened PRs, ran AI code review
-- Day 3: Human PR review, merged to main (dark)
+- Day 3: Human PR review, merged to trunk (dark)
 - Day 4: Code released, QA consultation, fix missed use case
 - Day 5: Code live to test users
 
