@@ -823,7 +823,7 @@ html {
     color: var(--color-text-muted);
     padding: var(--spacing-md) var(--spacing-lg);
     margin: var(--spacing-sm) 0;
-    font-size: 0.875rem;
+    font-size: 1rem;
     animation: messageSlideIn 0.4s ease-out;
 }
 
