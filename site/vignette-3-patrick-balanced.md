@@ -11,7 +11,9 @@
 
 ## Context: What Happened in Week 2
 
-After shipping the scrappy version dark in Week 1, Patrick and the PM enabled the feature flag for 5%, and then up to 20% of production users. Patrick spent this time developing the scrappy version of another feature and working with the PM to get that experiment started.
+After shipping the scrappy version dark in Week 1, Patrick and the PM enabled the feature flag for 5%, and then up to 20% of production users. 
+
+*Patrick spent this time developing the scrappy version of another feature and working with the PM to get that experiment started.*
 
 **User feedback started rolling in:**
 
