@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Role Transition Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>Role Transition Guide</h2>
+                <p class="subtitle">From Polish-First to Flow-Based</p>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#intro" class="nav-link active" data-page="intro">Introduction</a></li>
+
+                <li class="nav-section">The Examples</li>
+                <li><a href="#maya" class="nav-link" data-page="vignette-1-maya-old-way">
+                    <span class="vignette-number">1</span>
+                    <span class="vignette-info">
+                        <span class="vignette-title">The Old Way</span>
+                        <span class="vignette-subtitle">Maya's Excellence</span>
+                    </span>
+                </a></li>
+
+                <li><a href="#patrick-scrappy" class="nav-link" data-page="vignette-2-patrick-scrappy">
+                    <span class="vignette-number">2</span>
+                    <span class="vignette-info">
+                        <span class="vignette-title">The New Way: Scrappy</span>
+                        <span class="vignette-subtitle">Patrick, Week 1</span>
+                    </span>
+                </a></li>
+
+                <li><a href="#patrick-balanced" class="nav-link" data-page="vignette-3-patrick-balanced">
+                    <span class="vignette-number">3</span>
+                    <span class="vignette-info">
+                        <span class="vignette-title">The New Way: Balanced</span>
+                        <span class="vignette-subtitle">Patrick, Week 3</span>
+                    </span>
+                </a></li>
+
+                <li><a href="#priya" class="nav-link" data-page="vignette-4-priya-large-arch">
+                    <span class="vignette-number">4</span>
+                    <span class="vignette-info">
+                        <span class="vignette-title">The New Way: Large Arch</span>
+                        <span class="vignette-subtitle">Priya's Refactor</span>
+                    </span>
+                </a></li>
+
+                <li><a href="#genghis" class="nav-link" data-page="vignette-5-genghis-antipattern">
+                    <span class="vignette-number">5</span>
+                    <span class="vignette-info">
+                        <span class="vignette-title">Don't Be Like Genghis</span>
+                        <span class="vignette-subtitle">The Anti-Pattern</span>
+                    </span>
+                </a></li>
+
+                <li class="nav-section">Reference</li>
+                <li><a href="#principles" class="nav-link" data-page="key-principles">Key Principles</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <article id="content" class="content">
+                <!-- Content will be loaded here -->
+            </article>
+
+            <!-- Navigation buttons -->
+            <div class="content-nav">
+                <button id="prev-btn" class="nav-btn nav-btn-prev" style="display: none;">
+                    <span>←</span>
+                    <span class="nav-btn-text">Previous</span>
+                </button>
+                <button id="next-btn" class="nav-btn nav-btn-next" style="display: none;">
+                    <span class="nav-btn-text">Next</span>
+                    <span>→</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="animations.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
