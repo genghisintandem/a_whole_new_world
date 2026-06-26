@@ -47,7 +47,7 @@ Mobile apps (iOS/Android/React) need to display badges (Verified, Pro Member, Ea
 
 Demonstrates the old way: thorough, coordinated, polished before shipping. She did it excellently.
 
-**Patrick Holstein** — *Mid-level React Engineer*
+**Patrick Diestler** — *Mid-level React Engineer*
 
 Demonstrates the new way: ship dark, iterate based on feedback, own features end-to-end.
 

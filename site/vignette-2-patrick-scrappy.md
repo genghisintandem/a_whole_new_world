@@ -2,7 +2,7 @@
 
 ## Patrick's Journey: User Profile Badges, Week 1
 
-**Character:** Patrick Holstein, Mid-level React Engineer  
+**Character:** Patrick Diestler, Mid-level React Engineer  
 **Experience:** 3 years, eager to prove value, learning backend  
 **Timeline:** 3 days from idea to dark-shipped code  
 **Outcome:** Working feature behind a flag, ready for early feedback

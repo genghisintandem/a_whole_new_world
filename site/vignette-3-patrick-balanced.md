@@ -2,7 +2,7 @@
 
 ## Patrick's Journey: User Profile Badges, Week 3
 
-**Character:** Patrick Liu, Mid-level React Engineer  
+**Character:** Patrick Diestler, Mid-level React Engineer  
 **Experience:** 3 years, now iterating based on real feedback  
 **Timeline:** 2 days and change to ship polished iteration  
 **Outcome:** Production-ready feature with i18n, tooltips, and design polish
