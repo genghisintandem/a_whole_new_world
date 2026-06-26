@@ -14,8 +14,8 @@ let currentPageIndex = 0;
 // Introduction page content
 const introContent = `
 <div class="intro-hero">
-    <h1>Engineering Role Transition Guide</h1>
-    <p>From Polish-First to Flow-Based Development</p>
+    <h1>Engineering Role Transitions</h1>
+    <p>Radical Ownership of Process and Flow</p>
 </div>
 
 ## We're Choosing Greatness, Together
