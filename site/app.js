@@ -44,15 +44,19 @@ Mobile apps (iOS/Android/React) need to display badges (Verified, Pro Member, Ea
 ### The Characters
 
 **Maya Chen** — *Senior iOS Engineer*
+
 Demonstrates the old way: thorough, coordinated, polished before shipping. She did it excellently.
 
 **Patrick Holstein** — *Mid-level React Engineer*
+
 Demonstrates the new way: ship dark, iterate based on feedback, own features end-to-end.
 
 **Priya Sharma** — *Senior Backend Engineer*
+
 Shows how to handle large architectural changes through chunked delivery and continuous merging.
 
 **Genghis** — *Engineering Manager*
+
 Demonstrates what NOT to do. Obviously.
 
 ---
