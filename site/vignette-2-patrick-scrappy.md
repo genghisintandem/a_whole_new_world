@@ -131,7 +131,7 @@ Patrick adds the TODO comment.
 
 ---
 
-## Day 3: QA Consultation & Shipping Dark
+## Day 3: Shipping Dark
 
 **JIRA Status:** PR Review → Merged (Dark)
 
@@ -143,7 +143,7 @@ Patrick merges both PRs to `main`.
 
 ---
 
-## Day 4: Release and Followup
+## Day 4: Release and QA Consultation
 
 The next batch of React Trunk tickets is released to prod. The code is live in production, but the `profile-badges` feature flag is set to `false` for all users.
 
