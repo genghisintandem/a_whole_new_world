@@ -246,8 +246,8 @@ function styleSlackMessages() {
                     threadContainer.style.background = 'rgba(59, 130, 246, 0.03)'; // Pale blue
                     threadContainer.style.borderLeft = '3px solid rgba(59, 130, 246, 0.2)';
                 } else if (isPR) {
-                    threadContainer.style.background = 'rgba(251, 146, 60, 0.03)'; // Pale orange
-                    threadContainer.style.borderLeft = '3px solid rgba(251, 146, 60, 0.2)';
+                    threadContainer.style.background = 'rgba(134, 168, 145, 0.08)'; // Pale sage
+                    threadContainer.style.borderLeft = '3px solid rgba(134, 168, 145, 0.3)';
                 }
 
                 threadContainer.style.padding = '1rem';
