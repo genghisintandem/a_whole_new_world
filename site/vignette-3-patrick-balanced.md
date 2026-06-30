@@ -52,7 +52,7 @@ Patrick reviews the updated code and adds the translation keys.
 
 ## Day 1, Afternoon: Adding Translations
 
-Patrick creates translation files for English and Spanish (the two locales the app supports).
+Patrick creates translation files for English and Spanish (the two locales the app supports). He does this meanually to start so that he can confirm the structure works. In the future, he'll likely point the tools at these files to add new badges and translations.
 
 **public/locales/en/common.json:**
 ```json

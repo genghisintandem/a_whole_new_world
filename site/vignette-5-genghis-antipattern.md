@@ -166,7 +166,7 @@ I tried to quickly add a "New User" badge feature and shipped a bug that caused 
 
 1. **Trusted AI output blindly** — I used the first output from the AI without reviewing it critically. I didn't ask the machine to help me plan the feature, I believed it was a 'trivial' enough feature that planning was a waste of time. The code had several issues (hardcoded threshold, wrong date type, duplicate badge logic), but I only noticed the compilation error because I was in a rush.
 
-2. **Gave up on AI iteration** — When the code didn't compile, I manually patched it instead of refining the prompt. This meant I fixed the symptom (compilation error) but not the underlying issues (bad logic).
+2. **Gave up on AI iteration** — When the code didn't compile, I manually patched it instead of refining the prompt. This meant I fixed the symptom (compilation error) but not the underlying issues (bad logic). It's fine to write code manually when it makes sense, but not when it's because I know I'm hacking around solving the actual problem.
 
 3. **Skipped code review** — I was in a hurry and didn't run the AI code review tool or wait for human review. The AI review would have caught the duplicate badge bug.
 
@@ -180,6 +180,7 @@ I tried to quickly add a "New User" badge feature and shipped a bug that caused 
 - First prompt: "Add a new user badge"
 - Second prompt: "The code doesn't compile - we use Instant not LocalDate. Also make the threshold configurable."
 - Third prompt: "What edge cases should I consider? What happens if getBadges() is called multiple times?"
+- If I still have things I want done, manually doing them and making sure I use that new manual code as a guide for further prompting
 
 ✅ **Run AI code review:**
 - The tool would have flagged the duplicate badge issue and the lack of a feature flag.
@@ -245,6 +246,7 @@ Genghis's mistakes are common when teams first adopt AI-native development. Here
 - Treat AI output as a draft, not necessarily a final product
 - Interrogate the code carefully. Read it, ask the AI questions, use other models and agents to find flaws and oversights
 - Refine your prompt if the output isn't quite right
+- Re-point your prompt at any manual changes you have made so it has an example
 - Establish and share guardrails that work for you
 
 </div>
