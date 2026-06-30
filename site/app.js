@@ -7,6 +7,7 @@ const pages = [
     { id: 'vignette-4-priya-large-arch', file: 'vignette-4-priya-large-arch.md', title: 'The New Way: Large Architecture' },
     { id: 'vignette-5-genghis-antipattern', file: 'vignette-5-genghis-antipattern.md', title: "Don't Be Like Genghis" },
     { id: 'vignette-6-kenji-qa-guide', file: 'vignette-6-kenji-qa-guide.md', title: 'QA: From Gatekeeper to Guide' },
+    { id: 'vignette-7-kenji-large-project', file: 'vignette-7-kenji-large-project.md', title: 'QA: Large Project Validation' },
     { id: 'key-principles', file: 'key-principles.md', title: 'Key Principles' }
 ];
 
@@ -74,7 +75,8 @@ Shows how quality specialization transforms from gatekeeping to guidance, using 
 4. **Review Priya's large architecture** example if you work on large refactors
 5. **Enjoy Genghis's anti-pattern**. He is not a role model, he is an object lesson
 6. **Read Kenji's QA story** to see how quality specialization shifts from gatekeeping to guidance
-7. **Reference the Key Principles** as a quick guide
+7. **Read Kenji's large project story** to see how QA validates complex migrations with metrics instead of test plans
+8. **Reference the Key Principles** as a quick guide
 
 ---
 
