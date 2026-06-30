@@ -66,7 +66,7 @@ Maya opens a pull request: **[ENG-2847] Add user profile badges to iOS app**
 The PR description is comprehensive:
 - Links to the JIRA ticket and Figma designs
 - Notes on what she tested locally
-- Notes on any gotchas she that will look like bugs but are working as intended
+- Notes on any gotchas that will LOOK like bugs but are actually working as intended
 
 **First review (Sarah, iOS Tech Lead):**
 > "Nice work Maya. A few thoughts:
@@ -185,9 +185,8 @@ This was **exactly what we asked Maya to do**, and she did it exceptionally well
 - Week 4: Released!
 
 **JIRA Board Flow:**
-```
+
 Backlog → In Progress → Blocked → In Progress → PR Review → In QA → In Progress (bug fix) → In QA → Ready for Regression → In Regression → Done
-```
 
 ---
 

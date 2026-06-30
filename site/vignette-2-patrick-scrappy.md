@@ -218,9 +218,8 @@ Patrick's approach demonstrates the new paradigm:
 - Day 5: Code live to test users
 
 **JIRA Board Flow:**
-```
+
 No ticket → Backlog → In Progress → PR Review → Merged to Trunk → Done
-```
 
 ---
 

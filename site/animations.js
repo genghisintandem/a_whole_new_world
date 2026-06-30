@@ -555,6 +555,32 @@ function initializeAnimations() {
         comparisonKenjiMarker.replaceWith(comparison);
     }
 
+    // Kenji's Large Project Comparison (Vignette 7)
+    const comparisonKenjiLargeMarker = content.querySelector('[data-animation="comparison-kenji-large"]');
+    if (comparisonKenjiLargeMarker) {
+        const comparison = createComparisonFlow(
+            [
+                'Write 50-case test plan upfront (before dev starts)',
+                'Wait 6 weeks for development on feature branch',
+                'Execute test plan once at end on staging',
+                'Find bugs, wait for fixes, re-test',
+                'Big-bang deploy to production (high risk)',
+                'Binary decision: "ready to ship" or "not ready"',
+                'Total: 9 weeks, high anxiety, lots of waiting'
+            ],
+            [
+                'Define metrics per phase, plan to write tests just-in-time',
+                'Validate continuously at each merge and rollout stage',
+                'Write focused regression tests before risky phases',
+                'Run tests multiple times (5%, 50%, 100%) on production',
+                'Gradual rollout with metrics + tests at each stage',
+                'Data-driven decisions: "metrics + tests look good, ready for next phase"',
+                'Total: 6 weeks, lower risk, continuous partnership'
+            ]
+        );
+        comparisonKenjiLargeMarker.replaceWith(comparison);
+    }
+
     // Priya's Architecture Diagrams
     const priyaBeforeMarker = content.querySelector('[data-animation="priya-architecture-before"]');
     if (priyaBeforeMarker) {
@@ -762,6 +788,52 @@ function initializeAnimations() {
             }
         ]);
         kenjiEdgeCasesChatMarker.replaceWith(chat);
+    }
+
+    // Kenji's Regression Test Plan Chat Interface (Vignette 7 - Large Project)
+    const kenjiRegressionTestChatMarker = content.querySelector('[data-animation="kenji-regression-test-chat"]');
+    if (kenjiRegressionTestChatMarker) {
+        const chat = createChatInterface([
+            {
+                type: 'user',
+                avatar: 'K',
+                iteration: 'Prompt 1',
+                content: 'I\'m a QA analyst. We\'re about to flip the read path for a badge migration - users will start reading badge data from a new service instead of the old one. This is a high-risk change.\n\nHelp me write a focused regression test plan. I don\'t need every edge case - I need the critical flows that would cause a user-facing incident if broken. What should I test?'
+            },
+            {
+                type: 'ai',
+                content: 'Here\'s a focused regression test plan for badge read path migration:\n\n**Critical User Flows (Must Test)**\n1. Badge display on profile page (web, iOS, Android)\n2. Badge tooltips show correct descriptions\n3. Multiple badges render correctly (test user with 1, 3, 5+ badges)\n4. Users with no badges don\'t see errors\n5. Badge icons load correctly\n\n**Data Integrity (Must Validate)**\n6. Verified users show "Verified" badge\n7. Pro users show "Pro Member" badge\n8. Early adopters show "Early Adopter" badge\n9. Badge counts match between old and new system\n\n**Error Handling (Must Not Break)**\n10. Profile page still loads if badge service is slow\n11. Profile page still loads if badge service returns error\n12. Graceful degradation: missing badge data doesn\'t crash page\n\n**Rollback Validation**\n13. Feature flag can instantly switch back to old system'
+            },
+            {
+                type: 'user',
+                avatar: 'K',
+                content: '✓ Perfect. 13 test cases - way more focused than a 50-case comprehensive plan. I\'m going to trust the process and not add more for now. I\'ll run these at 5% and 50% rollout.'
+            }
+        ]);
+        kenjiRegressionTestChatMarker.replaceWith(chat);
+    }
+
+    // Kenji's Preferences Regression Test Plan Chat Interface (Vignette 7)
+    const kenjiPreferencesTestChatMarker = content.querySelector('[data-animation="kenji-preferences-test-chat"]');
+    if (kenjiPreferencesTestChatMarker) {
+        const chat = createChatInterface([
+            {
+                type: 'user',
+                avatar: 'K',
+                iteration: 'Prompt 1',
+                content: 'We\'re migrating user preference data (notifications, theme, language) from old service to new service. What critical flows should I test in the regression plan?'
+            },
+            {
+                type: 'ai',
+                content: 'Here\'s a focused 12-case regression test plan for preferences migration:\n\n1. User can view their notification preferences\n2. User can update notification preferences (save works)\n3. Notification emails respect user preferences\n4. Theme preference (light/dark) persists correctly\n5. Language preference loads correct translations\n6. Default preferences assigned to new users\n7. Empty preferences don\'t crash settings page\n8. Bulk preference updates don\'t lose data\n9. Old preference values migrated correctly\n10. Preferences sync across devices (web + mobile)\n11. Profile loads even if preference service slow\n12. Feature flag can rollback instantly'
+            },
+            {
+                type: 'user',
+                avatar: 'K',
+                content: '✓ Perfect. 12 tests specific to preferences. Not just copy-pasting the badge test plan.'
+            }
+        ]);
+        kenjiPreferencesTestChatMarker.replaceWith(chat);
     }
 }
 

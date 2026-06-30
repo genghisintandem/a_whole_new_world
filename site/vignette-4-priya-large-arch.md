@@ -253,13 +253,8 @@ Priya's refactor demonstrates how the new paradigm handles big changes:
 **6 weeks total, 8 merges to main**
 
 **JIRA Board Flow (per entity type):**
-```
-Epic → Ticket 1 (stub) → Merged
-     → Ticket 2 (shadow-write) → Merged
-     → Ticket 3 (flip read) → Merged
-     → Ticket 4 (remove shadow) → Merged
-     → Repeat for next entity type...
-```
+
+Epic → Ticket 1 (stub) → Merged → Ticket 2 (shadow-write) → Merged → Ticket 3 (flip read) → Merged → Ticket 4 (remove shadow) → Merged → Repeat for next entity type...
 
 ---
 

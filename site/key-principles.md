@@ -38,7 +38,7 @@ Both are valid. Both require craft and care. They just measure success different
 
 **Old way:** iOS engineer builds the UI, hands off to backend team for API changes (or waits to start until backend is done), hands off to QA for testing.
 
-**New way:** Engineer owns the feature end-to-end. If you need backend changes, draft them (with AI help) and pair with a backend expert to review if needed.
+**New way:** Engineer owns the feature end-to-end. If you need changes on another codebase, draft them (with AI help) and pair with the codebase's expert to review if needed.
 
 **Why:**
 - Handoffs are slow and error-prone
@@ -58,7 +58,7 @@ Both are valid. Both require craft and care. They just measure success different
 
 **Old way:** Write all code manually, or Google for snippets.
 
-**New way:** Use AI to scaffold code, catch edge cases, and refactor — but treat the first output as a draft, not the final version.
+**New way:** Use AI to generate code, catch edge cases, and refactor — but treat the first output as a draft, not the final version.
 
 **Why:**
 - AI can generate code faster than you can type it
@@ -176,7 +176,7 @@ Both are valid. Both require craft and care. They just measure success different
 
 ### "What if AI gives me insecure code?"
 
-**Run AI code review.** It will flag common security issues (XSS, SQL injection, insecure dependencies). If you're unsure, ask a security-focused engineer to review. AI will actually be BETTER at finding these issues, even in its own solutions, than most humans.
+**Run AI code review.** It will flag common security issues (XSS, SQL injection, insecure dependencies). If you're unsure, ask a security-focused engineer to review. AI will actually be BETTER at finding these issues, even in its own solutions, than most humans. Claude Code specifically has an `/security-review` option for this.
 
 ### "What if I don't know enough about backend/frontend/mobile to own the full stack?"
 
@@ -198,6 +198,7 @@ Both are valid. Both require craft and care. They just measure success different
 1. Refine your prompt with more context (show the AI existing code patterns)
 2. Ask a human for help
 3. Write the code manually (but only after trying iteration)
+4. Have the AI review so you can continue to iterate by prompting
 
 ### "What if I'm more comfortable with the old way?"
 

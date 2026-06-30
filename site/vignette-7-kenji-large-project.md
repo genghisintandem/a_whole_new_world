@@ -279,40 +279,9 @@ WHERE old_system.badge_count != new_system.badge_count;
 
 Metrics show shadow-writes are working at 20%. Before Priya flips the read path, Kenji writes a **targeted regression test plan** specifically for badges.
 
-**Kenji (opens Claude):**
+Kenji opens Claude:
 
-> "I'm a QA analyst. We're about to flip the read path for a badge migration - users will start reading badge data from a new service instead of the old one. This is a high-risk change.
->
-> Help me write a focused regression test plan. I don't need every edge case - I need the critical flows that would cause a user-facing incident if broken. What should I test?"
-
-**Claude's response:**
-
-> Here's a focused regression test plan for badge read path migration:
->
-> **Critical User Flows (Must Test)**
-> 1. Badge display on profile page (web, iOS, Android)
-> 2. Badge tooltips show correct descriptions
-> 3. Multiple badges render correctly (test user with 1, 3, 5+ badges)
-> 4. Users with no badges don't see errors
-> 5. Badge icons load correctly
->
-> **Data Integrity (Must Validate)**
-> 6. Verified users show "Verified" badge
-> 7. Pro users show "Pro Member" badge
-> 8. Early adopters show "Early Adopter" badge
-> 9. Badge counts match between old and new system
->
-> **Error Handling (Must Not Break)**
-> 10. Profile page still loads if badge service is slow
-> 11. Profile page still loads if badge service returns error
-> 12. Graceful degradation: missing badge data doesn't crash page
->
-> **Rollback Validation**
-> 13. Feature flag can instantly switch back to old system
-
-**Kenji:**
-
-> "Perfect. 13 test cases - I'm going to trust the process and not add more for now. I'll run these at 5% and 50% rollout."
+<div data-animation="kenji-regression-test-chat"></div>
 
 Kenji documents this in a shared doc: **Badge Migration - Regression Test Plan**
 
@@ -431,28 +400,9 @@ Priya is ready to migrate preferences (notification settings, theme preferences,
 
 > "Preferences are different from badges. The critical flows are different. I need a new targeted regression test plan."
 
-**Kenji (uses Claude again):**
+Kenji uses Claude again:
 
-> "We're migrating user preference data (notifications, theme, language) from old service to new service. What critical flows should I test in the regression plan?"
-
-**Claude generates a focused 12-case test plan for preferences:**
-
-1. User can view their notification preferences
-2. User can update notification preferences (save works)
-3. Notification emails respect user preferences
-4. Theme preference (light/dark) persists correctly
-5. Language preference loads correct translations
-6. Default preferences assigned to new users
-7. Empty preferences don't crash settings page
-8. Bulk preference updates don't lose data
-9. Old preference values migrated correctly
-10. Preferences sync across devices (web + mobile)
-11. Profile loads even if preference service slow
-12. Feature flag can rollback instantly
-
-**Kenji:**
-
-> "Perfect. 12 tests specific to preferences. Not just copy-pasting the badge test plan."
+<div data-animation="kenji-preferences-test-chat"></div>
 
 **Timeline:**
 - Week 4: Shadow-write at 5% → validate metrics → Kenji runs regression tests at 5%
@@ -479,62 +429,23 @@ Priya deletes the old service. Migration complete.
 
 ---
 
-## Reflection: What Changed for QA?
+## Key Differences: Old Way vs. New Way
 
-Kenji sits down to reflect on how this project felt different from the old way.
-
-### Old Way: Comprehensive Test Plan Upfront
-- **Effort:** 2 days upfront to write 50-case test plan covering all 4 services
-- **Timing:** Written as a big batch before or after development. Not really integrated as part of the dev process
-- **Validation:** 2 weeks at the end, executing test plan on Test
-- **When tests ran:** Once, at the very end, on Test
-- **Test plan accuracy:** Outdated by the time testing happened (Priya changed approach 3 times)
-- **Risk:** High - testing happened after all the work was done
-- **Relationship:** QA as gatekeeper at the end
-
-### New Way: Metrics + Targeted Regression Tests Per Phase
-- **Effort:** 1 day upfront to define metrics, then ~2 hours per entity to write targeted regression test plan
-- **Timing:** Metrics defined upfront, regression tests written right before each risky phase
-- **Validation:** Ongoing - metrics monitored continuously, regression tests run at 5% and 50% rollouts
-- **When tests ran:** Multiple times throughout the project (at each entity migration)
-- **Test plan accuracy:** High - tests written when Kenji understood the actual edge cases
-- **Risk:** Low - each phase validated before moving forward, instant rollback available
-- **Relationship:** QA as strategic partner throughout
-
----
-
-## Key Insight: Regression Testing Still Matters
+<div data-animation="comparison-kenji-large"></div>
 
 **Kenji (reflecting):**
 
-> "This seems like it went pretty well. It's still hard to let test cases I COULD have run go undone, but I think the way I did it was a good start at the new way we're being asked to do:
+> "This went pretty well. It's still hard to let test cases I COULD have run go undone, but the way I did it was a good start at the new approach:
 >
 > **Targeted regression tests written at the right time.**
 >
-> For badges, I wrote a 13-case regression test plan right before the read path flip - the highest-risk moment. I didn't write it 6 weeks earlier when I would have been guessing at edge cases and I didn't wait until the very end to test everything. I was able to keep context small and built-in for each plan.
+> For badges: 13-case regression test plan, written right before the read path flip (the highest-risk moment).
 >
-> For preferences, I wrote a different 12-case regression test plan specific to that entity.
+> For preferences: Different 12-case regression test plan specific to that entity.
 >
-> Total: 25 test cases across the whole project, written when I had context, run multiple times at key rollout points.
+> Total: 25 test cases across the whole project, written when I had context, run multiple times (5%, 50%, 100%).
 >
-> Old way: 50 test cases written upfront, many irrelevant, run once at the end.
->
-> New way: 25 test cases written just-in-time, highly relevant, run at 5%, 50%, and 100%.
->
-> **Metrics told me 'is it working?' Regression tests told me 'did I miss anything critical?'**
->
-> Both matter. They're complementary."
-
-
----
-
-**Old way blocked:**
-- "Not ready to ship - 5 test cases still failing on staging"
-
-**New way leads:**
-- "Metrics look good at 50%, regression tests passing. Ready for 100%?"
-- "Found null badge bug in test case #12 - needs fix before we go to 20%"
-- "Badge count mismatch is expected (old system caps at 10). Documenting in test plan."
+> **Metrics told me 'is it working?' Regression tests told me 'did I miss anything critical?'** Both matter. They're complementary."
 
 ---
 
@@ -577,49 +488,6 @@ Looking back at the old QA methodology, here's how it maps to the new way:
 
 **Old question:** "Is this ready to ship?"  
 **New question:** "What do the metrics + regression tests tell us at this rollout stage? Ready for next phase?"
-
----
-
-## Kenji's Advice for Large Projects
-
-> "For big refactors or migrations, the old 'write a comprehensive test plan as the final gate' approach doesn't work well. The plan becomes outdated even as the dev fixes issues we find, you can't test until the end, and the risk is massive.
-> 
-> The new way is lets us build confidence together the whole time:
-> 
-> 1. **Define success metrics per phase** (not comprehensive test cases upfront)
-> 2. **Write targeted regression test plans just-in-time** (right before risky phases, not 6 weeks early)
-> 3. **Run regression tests multiple times** (at 5%, 50%, 100% - not once at the end)
-> 4. **Combine metrics + testing** (metrics for continuous signal, tests for high-confidence validation)
-> 5. **Test on production with flags** (real data, gradual rollout, instant rollback)
-> 6. **Partner with engineers throughout** (don't wait until the end)
-> 
-> This doesn't mean 'less testing.' It actually means **more testing** - I ran 25 tests across the project (vs. 50 in the old way), but I ran them multiple times at key moments, on production, with real data. And they were accurate because I wrote them when I understood the actual edge cases.
-> 
-> **Regression testing still matters. Just do it at the right time, with the right scope.**"
-
----
-
-## Timeline Comparison
-
-**Old way:**
-- Week 0: Write test plan (2 days)
-- Week 1-6: Wait for development
-- Week 7-8: Execute test plan on staging (2 weeks)
-- Week 9: Big-bang deploy, hold your breath
-
-**Total: 9 weeks, high risk**
-
----
-
-**New way:**
-- Week 0: Define confidence metrics (1 day)
-- Week 1: Validate instrumentation (stub service)
-- Week 2: Validate shadow-write metrics at 5% → 20%
-- Week 3: Validate read path at 5% → 20% → 50% → 100%
-- Week 4: Remove shadow-writes, validate idle old system
-- Week 5-6: Repeat for other entities
-
-**Total: 6 weeks, low risk, continuous validation**
 
 ---
 

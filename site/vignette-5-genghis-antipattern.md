@@ -333,11 +333,10 @@ Genghis forgot the thoughtfulness part. Don't be like Genghis.
 ---
 
 **JIRA Board Flow (Genghis's Journey):**
-```
-No ticket → Pushed to main → Production → 🔥 INCIDENT 🔥 → ROLLED BACK → Retro → Back to drawing board
-```
 
-(Compare this to Patrick's flow: `Backlog → In Progress → Merged (Dark) → Gradual Rollout → Done`)
+No ticket → Pushed to main → Production → 🔥 INCIDENT 🔥 → ROLLED BACK → Retro → Back to drawing board
+
+(Compare this to Patrick's flow: Backlog → In Progress → Merged (Dark) → Gradual Rollout → Done)
 
 ---
 

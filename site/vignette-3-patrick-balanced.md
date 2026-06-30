@@ -255,9 +255,8 @@ Patrick's iteration demonstrates how the new paradigm handles polish:
 - Week 3, Day 3-5: Gradual rollout to 50%, then 100%
 
 **JIRA Board Flow:**
-```
-Merged to Trunk → Done → [New Ticket] In Progress (Iteration) → PR Review → Merged To Trunk → Done → 50% Release → 100% Release 
-```
+
+Merged to Trunk → Done → [New Ticket] In Progress (Iteration) → PR Review → Merged To Trunk → Done → 50% Release → 100% Release
 
 ---
 
