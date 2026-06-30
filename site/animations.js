@@ -91,7 +91,7 @@ function createChatInterface(messages) {
         const avatar = document.createElement('div');
         avatar.className = 'chat-avatar';
         if (msg.type === 'user') {
-            avatar.textContent = 'P';
+            avatar.textContent = msg.avatar || 'P';
         } else if (msg.type === 'ai-validator') {
             avatar.textContent = 'GPT';
         } else {
@@ -529,6 +529,32 @@ function initializeAnimations() {
         comparisonLargeArchMarker.replaceWith(comparison);
     }
 
+    // Kenji's QA Comparison (Vignette 6)
+    const comparisonKenjiMarker = content.querySelector('[data-animation="comparison-kenji"]');
+    if (comparisonKenjiMarker) {
+        const comparison = createComparisonFlow(
+            [
+                'QA receives "done" features',
+                'Testing happens in lower environments (staging, QA)',
+                'QA writes and executes test plans',
+                'QA says "yes ship" or "no bugs found"',
+                'QA is the bottleneck and gatekeeper',
+                'Manual testing is the source of confidence',
+                'Value: catching bugs before production'
+            ],
+            [
+                'QA involved from planning stage',
+                'Testing happens in production (behind flags)',
+                'QA defines success metrics and observability',
+                'QA asks "what signals give us confidence?"',
+                'QA is a consultant and guide',
+                'Data + gradual rollout is the source of confidence',
+                'Value: enabling fast, confident iteration'
+            ]
+        );
+        comparisonKenjiMarker.replaceWith(comparison);
+    }
+
     // Priya's Architecture Diagrams
     const priyaBeforeMarker = content.querySelector('[data-animation="priya-architecture-before"]');
     if (priyaBeforeMarker) {
@@ -698,6 +724,44 @@ function initializeAnimations() {
             }
         ]);
         genghisChatMarker.replaceWith(chat);
+    }
+
+    // Kenji's Edge Cases Chat Interface
+    const kenjiEdgeCasesChatMarker = content.querySelector('[data-animation="kenji-edge-cases-chat"]');
+    if (kenjiEdgeCasesChatMarker) {
+        const chat = createChatInterface([
+            {
+                type: 'user',
+                avatar: 'K',
+                iteration: 'Prompt 1',
+                content: 'I\'m a QA analyst. We\'re building a user badge feature that displays badges on profile pages. The backend returns a list of badge objects (type, label, icon). The frontend renders them. What edge cases should I test?'
+            },
+            {
+                type: 'ai',
+                content: 'Here are edge cases to consider:\n\n1. Empty badge list - User has no badges\n2. Missing fields - Backend returns badge with missing icon or label\n3. Invalid badge type - Backend returns a badge type the frontend doesn\'t recognize\n4. Large badge list - User has 10+ badges (does UI overflow?)\n5. Slow backend response - Badge service takes >2s to respond\n6. Backend error - Badge service returns 500 error\n7. Partial failure - Some badges load, others fail\n8. Race condition - User navigates away before badges load\n9. Accessibility - Screen reader can announce badge labels\n10. Internationalization - Badge labels work in non-English locales'
+            },
+            {
+                type: 'note',
+                content: '💡 Kenji reviews: "I would have thought of most of these, but #7 (partial failure) and #8 (race condition) are ones I might have missed"'
+            },
+            {
+                type: 'user',
+                avatar: 'K',
+                iteration: 'Prompt 2 (Generate Tests)',
+                content: 'Can you generate Playwright test cases for edge cases #2, #5, and #6? We use TypeScript and our test setup intercepts network requests with page.route().'
+            },
+            {
+                type: 'ai',
+                content: 'test(\'handles missing badge icon\', async ({ page }) => {\n  await page.route(\'**/api/badges\', route => {\n    route.fulfill({\n      json: [{ type: \'verified\', label: \'Verified\' }] // missing icon\n    });\n  });\n  await page.goto(\'/profile/123\');\n  await expect(page.locator(\'.badge\')).toContainText(\'Verified\');\n});\n\ntest(\'handles slow badge service\', async ({ page }) => {\n  await page.route(\'**/api/badges\', async route => {\n    await new Promise(resolve => setTimeout(resolve, 3000));\n    route.fulfill({ json: [] });\n  });\n  await page.goto(\'/profile/123\');\n  await expect(page.locator(\'.profile-header\')).toBeVisible();\n});\n\ntest(\'handles badge service error\', async ({ page }) => {\n  await page.route(\'**/api/badges\', route => {\n    route.fulfill({ status: 500 });\n  });\n  await page.goto(\'/profile/123\');\n  await expect(page.locator(\'.profile-header\')).toBeVisible();\n  await expect(page.locator(\'.badge\')).toHaveCount(0);\n});',
+                code: true
+            },
+            {
+                type: 'user',
+                avatar: 'K',
+                content: '✓ This is really good! I need to tweak the selectors (we use data-testid, not class names), but the structure is solid. This would have taken me 30 minutes to write from scratch.'
+            }
+        ]);
+        kenjiEdgeCasesChatMarker.replaceWith(chat);
     }
 }
 

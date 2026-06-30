@@ -117,7 +117,24 @@ He messages Priya:
 **Patrick:**
 > "Perfect, thanks!"
 
-Using his AI tooling, Patrick updates and pushes a PR for the backend change within an hour. Once it's approved, he puts it in the merge queue. While in waiting states, Patrick uses an agent to update the frontend to expect the new API response format.
+Patrick updates the backend `BadgeService.java` to remove the `label` field and pushes the PR. While waiting for Priya's review, he notices **ENG-2756: Refactor UserCard component to use new design system tokens** has been in the backlog for a while.
+
+**Patrick (thinking):**
+> "This is a bigger refactor — probably 30+ instances across 5 files. Perfect job for an agent to handle while I work on the badge frontend changes."
+
+He spawns a background agent with the task:
+
+**Patrick's agent prompt:**
+> "Refactor all instances of UserCard component across the codebase to use our new design system tokens instead of hardcoded Tailwind classes. The mapping is: bg-blue-500 → bg-primary, text-gray-700 → text-secondary, etc. Check the design-tokens.css file for the full list. Make sure all variants (default, compact, highlighted) are updated consistently. Run the linter and tests after changes."
+
+The agent starts working in a separate worktree while Patrick continues with the badge frontend updates.
+
+**30 minutes later:**
+
+**Agent notification:**
+> ✅ Refactor complete. Updated 34 instances across 5 files. All tests passing. PR ready for review: [ENG-2756] Refactor UserCard to use design system tokens.
+
+Patrick quickly reviews the agent's work, approves it, and opens the PR. Two PRs shipped in parallel.
 
 ---
 
@@ -253,6 +270,7 @@ Merged to Trunk → Done → [New Ticket] In Progress (Iteration) → PR Review 
 ---
 
 **This is balanced excellence.** Patrick shipped fast enough to learn, then polished based on evidence. The result is a feature that users actually wanted, not just a feature that met a spec. While feedback was being gathered, Patrick was able to start in on a different feature and get its scrappy version ready to deploy as well.
+
 
 ---
 

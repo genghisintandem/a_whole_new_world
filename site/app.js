@@ -6,6 +6,7 @@ const pages = [
     { id: 'vignette-3-patrick-balanced', file: 'vignette-3-patrick-balanced.md', title: 'The New Way: Balanced' },
     { id: 'vignette-4-priya-large-arch', file: 'vignette-4-priya-large-arch.md', title: 'The New Way: Large Architecture' },
     { id: 'vignette-5-genghis-antipattern', file: 'vignette-5-genghis-antipattern.md', title: "Don't Be Like Genghis" },
+    { id: 'vignette-6-kenji-qa-guide', file: 'vignette-6-kenji-qa-guide.md', title: 'QA: From Gatekeeper to Guide' },
     { id: 'key-principles', file: 'key-principles.md', title: 'Key Principles' }
 ];
 
@@ -59,16 +60,21 @@ Shows how to handle large architectural changes through chunked delivery and con
 
 Demonstrates what NOT to do. Obviously.
 
+**Kenji Nakamura** — *Senior QA Analyst*
+
+Shows how quality specialization transforms from gatekeeping to guidance, using observability and iteration.
+
 ---
 
 ## How we intended this set of docs to be used
 
-1. **Start with Maya's vignette** to see an example of using our old paradign in a way that screamed excellence
+1. **Start with Maya's vignette** to see an example of using our old paradigm in a way that screamed excellence
 2. **Read Patrick's scrappy version** to understand the expectations around a new speed-to-learning approach
 3. **Continue with Patrick's balanced version** to see how polish happens through iteration and how decisions on WHAT to polish are made
 4. **Review Priya's large architecture** example if you work on large refactors
 5. **Enjoy Genghis's anti-pattern**. He is not a role model, he is an object lesson
-6. **Reference the Key Principles** as a quick guide
+6. **Read Kenji's QA story** to see how quality specialization shifts from gatekeeping to guidance
+7. **Reference the Key Principles** as a quick guide
 
 ---
 

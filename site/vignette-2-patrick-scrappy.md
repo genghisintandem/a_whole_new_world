@@ -87,6 +87,14 @@ They pair for 20 minutes. Priya spots a few issues:
 
 Priya helps Patrick prompt from a clean rebase, incorporating her feedback into the conversation with Claude. She walks Patrick through setting up a LaunchDarkly feature flag using the LD MCP Server so that the robot has the flag context built in. Patrick pushes his code. 
 
+**Patrick (thinking):**
+> "Okay, PRs are up. While waiting for review, let me knock out that quick bug from the backlog."
+
+He grabs **ENG-2845: Login button disabled state not showing spinner** — a simple CSS fix that's been sitting in the backlog for two weeks. 15 minutes later, he opens a third PR and gets it merged the same day.
+
+**Patrick (in Slack, #engineering):**
+> "Knocked out ENG-2845 while waiting on badge reviews. Small win."
+
 ---
 
 ## Day 2, Afternoon: AI-Assisted Code Review
