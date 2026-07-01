@@ -116,6 +116,10 @@ Kenji opens a shared doc and starts listing questions:
 - **How to get it:** Kenji tests on real devices with flag enabled for his account
 - **Success criteria:** Badges display correctly, no visual regressions
 
+<div class="note-position" data-position="275rem"></div>
+
+> **Note:** We don't expect analysts to be experts at metrics, performance, or anything yet. These are the *kinds* of things we want folks to learn to think about and ask for resources and training to get good at.
+
 ---
 
 **Patrick:**
@@ -206,6 +210,10 @@ Patrick opens his PR. In the old world, Kenji wouldn't see it until it was "Read
 
 ---
 
+<div class="note-position" data-position="625rem"></div>
+
+> **Note:** PRs are another thing we've never asked you to look at before. Kenji in this case has some deeper code knowledge-- we don't need you to be coders yourselves. This is more of an example of the sort of thing you should embrace *if it interests you*.
+
 **Kenji (final PR comment):**
 
 > **Approved** ✅
@@ -219,6 +227,10 @@ Patrick opens his PR. In the old world, Kenji wouldn't see it until it was "Read
 Patrick merges the PR. The feature is live in production, but at 0% (flag disabled for everyone).
 
 Kenji enables the flag for his own account and starts testing on real devices.
+
+<div class="note-position" data-position="775rem"></div>
+
+> **Note:** In this case, Kenji wants to do some exploratory testing because he has the time and interest. In a lot of cases, this testing will fall to the developer, with an analyst giving guidance on the most important cases to test.
 
 **Kenji's exploratory testing notes:**
 

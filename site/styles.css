@@ -238,6 +238,7 @@ body {
     box-shadow: none;
     animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: opacity, transform;
+    position: relative; /* Allow absolute positioning of sticky notes */
 }
 
 .content.loading {
@@ -396,6 +397,73 @@ html {
 
 .content blockquote > p {
     margin-bottom: var(--spacing-sm);
+}
+
+/* Sticky Notes - absolutely position in right margin */
+.content blockquote.sticky-note {
+    position: absolute;
+    right: -300px; /* Position in right margin */
+    top: 25rem; /* Position down from natural position */
+    width: 240px;
+    margin: 0;
+    padding: var(--spacing-md);
+    background: #fef3c7; /* Warm yellow */
+    border: none;
+    border-radius: 2px;
+    box-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--color-ink);
+    transform: rotate(1.5deg);
+    z-index: 10;
+}
+
+/* Alternate rotations for variety */
+.content blockquote.sticky-note:nth-of-type(even) {
+    transform: rotate(-1deg);
+}
+
+.content blockquote.sticky-note:nth-of-type(3n) {
+    transform: rotate(2deg);
+}
+
+.content blockquote.sticky-note::before {
+    content: '📌';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.25rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.content blockquote.sticky-note p {
+    margin: 0;
+    font-style: normal;
+}
+
+.content blockquote.sticky-note strong {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #92400e; /* Dark amber */
+    margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+    /* On smaller screens, keep sticky notes inline */
+    .content blockquote.sticky-note {
+        float: none;
+        margin-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        transform: rotate(0);
+    }
 }
 
 /* Slack-style chat messages */

@@ -231,6 +231,10 @@ No ticket → Backlog → In Progress → PR Review → Merged to Trunk → Done
 
 The new paradigm optimizes for learning speed, because we believe **fast feedback from real users beats slow perfection in a vacuum.**
 
+<div class="note-position" data-position="2rem"></div>
+
+> **Note:** Patrick, working in React, will necessarily have a faster get-to-prod timeline than Maya. The same PRINCIPLES apply to getting mobile work to trunk, out dark, and instrumented for testing and safe launch.
+
 ---
 
 **Next:** See how Patrick iterates on this scrappy version in Week 3, once real user feedback arrives.

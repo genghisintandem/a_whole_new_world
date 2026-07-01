@@ -30,6 +30,10 @@ Your role is evolving. Not because the old way was wrong, but because In Tandem'
 
 Both are valid. Both require craft and care to become great at. They just measure success differently.
 
+<div class="note-position" data-position="25rem"></div>
+
+> **Note:** This doesn't mean we're saying "be super risky" — we just want folks assessing our appetite for risk and building tooling to up our confidence.
+
 ---
 
 ## What You'll Find Here
@@ -139,6 +143,9 @@ async function loadPage(pageId) {
 
         // Style feedback stickers
         styleFeedbackStickers();
+
+        // Style sticky notes
+        styleStickyNotes();
 
         // Initialize animations after content is loaded
         if (typeof watchForAnimations === 'function') {
@@ -361,6 +368,37 @@ function styleFeedbackStickers() {
             nextSibling.style.boxShadow = 'none';
             nextSibling.style.fontSize = '0.875rem';
             nextSibling.style.fontStyle = 'italic';
+        }
+    });
+}
+
+// Style sticky notes in right margin
+function styleStickyNotes() {
+    const contentEl = document.getElementById('content');
+    if (!contentEl) return;
+
+    // Find blockquotes that should be sticky notes
+    const blockquotes = contentEl.querySelectorAll('blockquote');
+    blockquotes.forEach(bq => {
+        const text = bq.textContent.trim();
+
+        // Check if blockquote starts with note indicators
+        if (text.startsWith('📌') ||
+            text.startsWith('Note:') ||
+            text.startsWith('NOTE:') ||
+            text.match(/^\*\*Note:\*\*/i)) {
+            bq.classList.add('sticky-note');
+
+            // Check if previous element has position data (for custom positioning)
+            const prevElement = bq.previousElementSibling;
+            if (prevElement && prevElement.classList && prevElement.classList.contains('note-position')) {
+                const position = prevElement.dataset.position;
+                if (position) {
+                    bq.style.top = position;
+                }
+                // Hide the position marker
+                prevElement.style.display = 'none';
+            }
         }
     });
 }
