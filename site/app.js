@@ -41,6 +41,8 @@ Both are valid. Both require craft and care to become great at. They just measur
 Y'all, I know it's cheesy, but I figured some (admittedly idealized) walkthroughs of what these processes look like in action is the best way to communicate the change we're looking for. 
 I encourage roasting Genghis for how dorky the presentation is, but also give the content and intent a good faith runthrough.
 
+Also, these are not "always do exactly this" tracts. They're slice-of-life stories to demonstrate the *kinds of things* we'll be doing differently in our new world.
+
 ### The Stories
 
 All these stories follow the same technical challenge: **User Profile Badges**
