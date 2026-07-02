@@ -6,9 +6,9 @@ const pages = [
     { id: 'vignette-2-patrick-scrappy', file: 'vignette-2-patrick-scrappy.md', title: 'The New Way: Scrappy' },
     { id: 'vignette-3-patrick-balanced', file: 'vignette-3-patrick-balanced.md', title: 'The New Way: Balanced' },
     { id: 'vignette-4-priya-large-arch', file: 'vignette-4-priya-large-arch.md', title: 'The New Way: Large Architecture' },
-    { id: 'vignette-5-genghis-antipattern', file: 'vignette-5-genghis-antipattern.md', title: "Don't Be Like Genghis" },
     { id: 'vignette-6-kenji-qa-guide', file: 'vignette-6-kenji-qa-guide.md', title: 'QA: From Gatekeeper to Guide' },
     { id: 'vignette-7-kenji-large-project', file: 'vignette-7-kenji-large-project.md', title: 'QA: Large Project Validation' },
+    { id: 'vignette-5-genghis-antipattern', file: 'vignette-5-genghis-antipattern.md', title: "Don't Be Like Genghis" },
     { id: 'key-principles', file: 'key-principles.md', title: 'Key Principles' }
 ];
 
