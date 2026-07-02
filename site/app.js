@@ -1,6 +1,7 @@
 // Page navigation data
 const pages = [
-    { id: 'intro', file: null, title: 'Introduction' },
+    { id: 'tldr', file: null, title: 'TL;DR' },
+    { id: 'intro', file: null, title: 'Full Introduction' },
     { id: 'vignette-1-maya-old-way', file: 'vignette-1-maya-old-way.md', title: "The Old Way: Maya's Excellence" },
     { id: 'vignette-2-patrick-scrappy', file: 'vignette-2-patrick-scrappy.md', title: 'The New Way: Scrappy' },
     { id: 'vignette-3-patrick-balanced', file: 'vignette-3-patrick-balanced.md', title: 'The New Way: Balanced' },
@@ -12,6 +13,55 @@ const pages = [
 ];
 
 let currentPageIndex = 0;
+
+// TL;DR page content
+const tldrContent = `
+<div class="intro-hero">
+    <h1>Engineering Role Transitions: TL;DR</h1>
+    <p>Ship iteratively, with safety nets, so you learn fast without breaking things</p>
+</div>
+
+👉 **[Read the full introduction](#intro)** for context, characters, and how to use these docs.
+
+---
+
+## The Core Shift
+
+**Old way:** Perfect it before shipping → hand off → QA gate → production
+
+**New way:** Plan together → ship dark with flags → iterate in prod → gradual rollout based on metrics
+
+Both care about quality. The new way optimizes for learning speed through safe, iterative delivery.
+
+---
+
+## Key Practices
+
+- **Collaborate up front** — Dev, QA, and AI work together from the start to define "what does safe look like?"
+- **Ship behind flags** — Deploy to prod dark, then gradually roll out with kill switches
+- **Define confidence metrics** — Agree on the data/signals that prove it's working before rolling out wider
+- **Iterate with AI** — Use AI for planning and implementation, but iterate on prompts and validate output
+- **Validate in production** — Test happy paths pre-prod. Use flags, observability, and gradual rollouts to validate with real data
+
+---
+
+## Jump to Your Role
+
+**I'm a Developer**
+- [The New Way: Scrappy](#vignette-2-patrick-scrappy) — Ship a feature in 5 days, dark behind a flag
+- [The New Way: Balanced](#vignette-3-patrick-balanced) — Iterate and polish based on real user feedback
+
+**I'm an Architect / Working on Large Changes**
+- [Large Architecture Changes](#vignette-4-priya-large-arch) — How to ship big refactors through chunked delivery
+
+**I'm a QA Analyst**
+- [From Gatekeeper to Guide](#vignette-6-kenji-qa-guide) — Partner with devs to define confidence, not just find bugs
+- [Large Project Validation](#vignette-7-kenji-large-project) — Validate complex migrations with metrics, not exhaustive test plans
+
+---
+
+**Bonus:** [Don't Be Like Genghis](#vignette-5-genghis-antipattern) — Learn what NOT to do when moving fast
+`;
 
 // Introduction page content
 const introContent = `
@@ -127,6 +177,9 @@ async function loadPage(pageId) {
             const response = await fetch(page.file);
             const markdown = await response.text();
             htmlContent = marked.parse(markdown);
+        } else if (page.id === 'tldr') {
+            // Use TL;DR content
+            htmlContent = marked.parse(tldrContent);
         } else {
             // Use intro content
             htmlContent = marked.parse(introContent);
@@ -425,6 +478,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Load initial page
-    const initialHash = window.location.hash.slice(1) || 'intro';
+    const initialHash = window.location.hash.slice(1) || 'tldr';
     loadPage(initialHash);
 });
