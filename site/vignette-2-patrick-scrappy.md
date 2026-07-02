@@ -9,24 +9,26 @@
 
 ---
 
-## Day 1, Morning: Opportunity Spotted
+## Day 1, Morning: The PM Brings an Opportunity
 
 **JIRA Status:** No ticket yet
 
-Patrick is reviewing user feedback from the customer support Slack channel. A message catches his eye:
+The PM messages Patrick in Slack:
 
-**User feedback (via support):**
-> "I can't tell which users in my team are verified. Can we show some kind of badge or indicator on profiles?"
+**PM (in Slack, #engineering):**
+> "Hey @patrick - got some feedback from support about user profiles. Users want to see badges (verified, pro member, etc) to identify team members at a glance. Thoughts on how we could test this quickly?"
 
-Patrick thinks: *This would be quick to mock up. Let me see if product wants this.*
+**Patrick:**
+> "Yeah, I could mock something up pretty fast. Ship it dark behind a flag and get it in front of some early users to validate the concept? Probably a day or two to get something visual."
 
-He messages the product manager:
+**PM:**
+> "Perfect. Let's do that. Keep it scrappy - we just need to see if users care about this before we invest more."
 
-**Patrick (in Slack):**
-> "Hey @pm - seeing some feedback about wanting badges on user profiles (verified, pro member, etc). Worth exploring? I could mock something up to see if users like it."
+**Patrick:**
+> "Cool. I'll start with just the React UI and mock data, then we can connect it to real backend if the concept lands."
 
-**PM response (15 minutes later):**
-> "Interesting! Yeah, if you can get something visual in front of users quickly, let's try it. Don't spend more than a day or two on it."
+**PM:**
+> "👍 Love it. Keep me posted."
 
 Patrick doesn't write a formal spec. He doesn't wait for designs. He opens a lightweight JIRA ticket:
 
@@ -36,11 +38,6 @@ Patrick doesn't write a formal spec. He doesn't wait for designs. He opens a lig
 - **Success:** Get qualitative feedback from 10 early users
 
 He moves it to "In Progress."
-
----
-
-There's an alternate reality here, where the PM brings this work to the engineer, not the engineer seeing a note in Slack. In that case, the same conversations need to happen -- the context for the feature would just be delivered by the PM (and possibly Designer) to start. The same collaboration, check-in on work step-by-step, and measurements of success apply to scoped-and-designed work as apply to engineer-led development. This example is just one walkthrough of how to apply our new process, not the only way.
-
 
 ---
 
@@ -59,8 +56,8 @@ The badges appear on the profile page. Patrick takes a screenshot and sends it t
 **Patrick (in Slack):**
 > "Here's a rough version of badges. Thoughts?"
 
-**PM response:**
-> "Oh nice! Yeah, let's try this. Can you get it in front of some users?"
+**PM:**
+> "Oh nice! Yeah, this is exactly what I was picturing. Let's get it in front of some users."
 
 ---
 
