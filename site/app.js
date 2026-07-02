@@ -37,7 +37,7 @@ Both care about quality. The new way optimizes for learning speed through safe, 
 
 ## Key Practices
 
-- **Collaborate up front** — Dev, QA, and AI work together from the start to define "what does safe look like?"
+- **Collaborate up front** — Product, Dev, QA, and AI work together from the start to define "what does safe look like?"
 - **Ship behind flags** — Deploy to prod dark, then gradually roll out with kill switches
 - **Define confidence metrics** — Agree on the data/signals that prove it's working before rolling out wider
 - **Iterate with AI** — Use AI for planning and implementation, but iterate on prompts and validate output
