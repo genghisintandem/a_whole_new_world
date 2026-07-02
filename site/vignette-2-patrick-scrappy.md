@@ -39,6 +39,11 @@ He moves it to "In Progress."
 
 ---
 
+There's an alternate reality here, where the PM brings this work to the engineer, not the engineer seeing a note in Slack. In that case, the same conversations need to happen -- the context for the feature would just be delivered by the PM (and possibly Designer) to start. The same collaboration, check-in on work step-by-step, and measurements of success apply to scoped-and-designed work as apply to engineer-led development. This example is just one walkthrough of how to apply our new process, not the only way.
+
+
+---
+
 ## Day 1, Afternoon: Building with AI
 
 **JIRA Status:** In Progress
