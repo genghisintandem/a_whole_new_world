@@ -1281,6 +1281,7 @@ html {
 }
 
 .arch-arrows-consolidated {
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-xl);
 }
 
@@ -1306,6 +1307,7 @@ html {
 }
 
 .arch-services-consolidated {
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-xl);
 }
 
